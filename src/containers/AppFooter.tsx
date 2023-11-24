@@ -1,5 +1,5 @@
-import { AppBar, Container, Toolbar, Grid } from '@mui/material';
-import { LocationOn, LocalPhone, Email } from '@mui/icons-material';
+import { Email, LocalPhone, LocationOn } from '@mui/icons-material';
+import { AppBar, Container, Grid, Toolbar } from '@mui/material';
 
 const AppFooter = () => {
   return (
@@ -12,6 +12,8 @@ const AppFooter = () => {
         background: `#0a0a0a url('https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/02/bg-footer.jpg') no-repeat center / cover`,
       }}
     >
+      <div className='flex items-center justify-center bg-[#000] pb-4 pt-3 text-sm text-[#A5A5A5] lg:text-base' >GOLDEN SPONSORS
+      </div>
       <Container maxWidth='lg' className='mt-16'>
         <Toolbar component={Container} maxWidth='xl'>
           <div className='flex flex-1 flex-col text-xs lg:flex-row'>
@@ -24,7 +26,7 @@ const AppFooter = () => {
                 <span className='mr-3'>
                   <LocationOn fontSize='small' />
                 </span>
-                319 c16 Lý Thường Kiệt, Q.11, HCM
+                319 Nguyễn Văn Bảo, Q.Gò Vấp, HCM
               </p>
               <p className='h-8'>
                 <span className='mr-3'>
@@ -36,9 +38,9 @@ const AppFooter = () => {
                 <span className='mr-3'>
                   <Email fontSize='small' />
                 </span>
-                demonhunter@gmail.com
+                sunnytravel@company.com
               </p>
-              <p className='h-8'>Đăng ký để được nhận thông tin khuyến mãi một cách nahnh chóng</p>
+              <p className='h-8'>Đăng ký để được nhận thông tin khuyến mãi một cách nhanh chóng</p>
             </div>
             <div className='basis-1/4 pb-7 md:px-5'>
               <div className='mb-6 mt-2 text-[18px] font-bold text-[#FFF]'>Tin tức</div>
@@ -107,7 +109,7 @@ const AppFooter = () => {
       <div className='flex items-center justify-center bg-[#000] pb-4 pt-3 text-sm text-[#A5A5A5] lg:text-base'>
         © All rights reserved. Thiết kế website
         <img className='ml-1 h-5 w-5' src='https://mona.solutions/logo.png' />
-        <span className='font-bold'>Mona Media</span>
+        <span className='font-bold'>Sunny Travel</span>
       </div>
     </AppBar>
   );

@@ -30,9 +30,200 @@ const Tour = () => {
     <div>
       <div className='bg-[#FF6600]'>
         <Container maxWidth='lg' className='mb-6 py-8'>
-          <p className='text-center text-[18px] font-extrabold text-[#fff]'>TOUR</p>
+          <p className='text-center text-[18px] font-extrabold text-[#fff]'>TOUR HIỆN TẠI ĐANG MỞ</p>
         </Container>
+        
       </div>
+      <Grid className='mb-8' container spacing={4}>
+          <Grid item xs={12} sm={3} >
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/Sapa.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Sapa</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/Sapa.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Sapa</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/offers_slide_3.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Phú Quốc</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={3} >
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/mientay.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Miền Tây</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/0002786_du-lich-quang-binh-bien-nhat-le-phong-nha-bai-da-nhay-1024x684.jpeg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Quảng Bình</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/du-lich-sai-gon-cover.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Sài Gòn</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+
+          </Grid>
+          <Grid item xs={12} sm={3} >
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/1533266023094_1613204-1024x681.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Đà Nẵng</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/Sapa.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Sapa</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/Sapa.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Sapa</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1000 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={3} >
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/Hue.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Huế</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1200 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='relative overflow-hidden  hover:bg-center'>
+              <div
+                style={{
+                  backgroundImage: `url(https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/HaLong.jpg)`,
+                  transition: 'transform 0.5s',
+                }}
+                className='py-12 pl-3 rounded-xl bg-center bg-no-repeat bg-cover font-bold text-[#FFF] transform scale-95 hover:scale-100'
+              >
+                <div className='translate-y-10'>
+                  <p className='text-xl font-bold'>Vịnh Hạ Long</p>
+                  <p className='py-2 text-sm'>
+                    <span className='text-[#FFFFFF]'>1230 hoạt động</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Grid>
+          
+        </Grid>
+
       <Container maxWidth='lg' className='flex flex-col gap-5 py-8 lg:flex-row'>
         <div className='lg:basis-1/4'>
           <p className='font-extrabold'>NHỮNG TOUR KHÁC</p>
@@ -43,7 +234,7 @@ const Tour = () => {
                 <img src='https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/offers_slide_2-300x300.jpg' />
               </div>
               <div className='basis-3/4 text-sm'>
-                Du Lịch Phú Quóc - Nam Đảo 3 ngày 2 đêm dịp Noel & Tết Dương Lịch 2018
+                Du Lịch Phú Quóc - Nam Đảo 3 ngày 2 đêm dịp Noel & Tết Dương Lịch 2023
                 <p className='mt-1 font-extrabold'>4.999.000₫</p>
               </div>
             </div>
