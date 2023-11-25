@@ -3,9 +3,6 @@ import { CssBaseline, LinearProgress, PaletteMode, ThemeProvider } from '@mui/ma
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import type {} from '@mui/x-data-grid/themeAugmentation';
 import { GridEmpty } from 'components/common';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { themeSelector } from 'reducers/themeSlice';
 
 const createAppTheme = (mode?: PaletteMode) =>
   createTheme({
@@ -93,14 +90,8 @@ type Props = {
 };
 
 const AppTheme = ({ children }: Props) => {
-  const { mode } = useSelector(themeSelector);
-
-  useEffect(() => {
-    document.body.dataset.theme = mode;
-  }, [mode]);
-
   return (
-    <ThemeProvider theme={responsiveFontSizes(createAppTheme(mode))}>
+    <ThemeProvider theme={responsiveFontSizes(createAppTheme('light'))}>
       <CssBaseline />
       {children}
     </ThemeProvider>

@@ -1,12 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import { default as storage } from 'redux-persist/lib/storage';
-import { profileSlice } from './profileSlice';
-import { themeSlice } from './themeSlice';
+import notification from './notificationSlice';
 
 const rootReducer = combineReducers({
-  [profileSlice.name]: profileSlice.reducer,
-  [themeSlice.name]: themeSlice.reducer,
+  [notification.name]: notification.reducer,
 });
 
 const persistedReducer = persistReducer({ key: 'root', storage }, rootReducer);

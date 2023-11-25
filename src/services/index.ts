@@ -1,5 +1,4 @@
-export { default as authService } from './UserService';
-export { default as hotelsService } from './hotels';
+export { default as newService } from './new';
+export { default as orderService } from './order';
 export { queryClient } from './queryClient';
-export { default as toursService } from './tours';
-
+export { default as travelService } from './travel';

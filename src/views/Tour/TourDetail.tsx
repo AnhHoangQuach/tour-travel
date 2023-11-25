@@ -1,60 +1,17 @@
-import {
-  FacebookRounded,
-  Google,
-  HorizontalRule,
-  LinkedIn,
-  MailOutlined,
-  Pinterest,
-  Twitter,
-} from '@mui/icons-material';
+import { FacebookRounded, Google, LinkedIn, MailOutlined, Pinterest, Twitter } from '@mui/icons-material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { Card, CardContent, Container, Rating, Tab, TextField } from '@mui/material';
-import { useQuery } from '@tanstack/react-query';
+import { Container, Dialog, Divider, Rating, Tab, TextField } from '@mui/material';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { Spinner } from 'components';
 import { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Link, useParams } from 'react-router-dom';
-import Slider from 'react-slick';
-import { privateRoute } from 'routes';
-import { toursService } from 'services';
+import { useParams } from 'react-router-dom';
+import { travelService } from 'services';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
-
-var settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  initialSlide: 0,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
+import { formatNumber } from 'utils/common';
+import { PopupCreateOrder } from './popups';
 
 const TourDetail = () => {
   const [value, setValue] = useState('1');
@@ -65,53 +22,47 @@ const TourDetail = () => {
     window.scrollTo(0, 0);
   }, [tourID]);
 
-  const { data: allTours, isLoading } = useQuery({
-    queryKey: ['toursService.getTours'],
-    queryFn: () => toursService.getTours(),
-  });
-
-  const { data: tour } = useQuery({
-    queryKey: ['toursService.getToursID', { tourID }],
-    queryFn: () => toursService.getToursID({ id: tourID! }),
-  });
-
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 
+  const { data } = useQuery({
+    queryKey: ['travelService.fetchTravels', { id: parseInt(tourID!) }],
+    queryFn: () => travelService.getTravel({ id: parseInt(tourID!) }),
+    placeholderData: keepPreviousData,
+  });
+
+  const [openOrder, setOpenOrder] = useState(false);
+
   return (
-    <Spinner loading={isLoading}>
+    <Spinner>
       <div>
         <div className='bg-[#FF6600]'>
-          <Container maxWidth='lg' className='mb-6 py-8'>
-            <p className='text-center text-[18px] font-extrabold text-[#fff]'>KHÁCH SẠN</p>
+          <Container maxWidth='lg' className='mb-6 py-4'>
+            <p className='text-center text-lg font-extrabold text-[#fff]'>KHÁCH SẠN</p>
           </Container>
         </div>
         <Container maxWidth='lg' className='py-12'>
           <div className='flex flex-col gap-4 lg:flex-row'>
             <div className='lg:basis-3/5'>
               <Carousel>
-                <div>
-                  <img src={tour?.[0].img} />
-                </div>
-                <div>
-                  <img src={tour?.[0].img} />
-                </div>
-                <div>
-                  <img src={tour?.[0].img} />
-                </div>
+                {[1, 2, 3].map((item) => (
+                  <img src={data?.image} key={item} />
+                ))}
               </Carousel>
             </div>
             <div className='pl-2 lg:basis-2/5'>
-              <p className='text-[28px] font-extrabold'>{tour?.[0].name}</p>
-              <HorizontalRule fontSize='large' className='mt-2 text-[#0000001A]' />
-              <p className='mb-2 text-2xl font-extrabold'>{tour?.[0].priceVND} ₫</p>
-              <p className='mb-2'>{tour?.[0].description}</p>
-              <button type='button' className='rounded-lg bg-[#E30050] px-5 py-3 font-extrabold text-[#FFF]'>
+              <p className='text-[28px] font-extrabold'>{data?.name}</p>
+              <p className='mb-2 text-2xl font-extrabold'>{formatNumber(data?.price)} đồng</p>
+              <p className='mb-2'>{data?.description}</p>
+              <button
+                type='button'
+                onClick={() => setOpenOrder(true)}
+                className='rounded-lg bg-[#E30050] px-5 py-3 font-extrabold text-[#FFF]'
+              >
                 ĐẶT NGAY
               </button>
-              <div className='my-4 border border-[#ececec]'></div>
-              <p className='text-xs'>Danh mục: </p>
+              <Divider className='my-4' />
               <div className='mt-3 flex gap-1 text-[#bbb8b8]'>
                 <FacebookRounded className='rounded-[50%] border-2 border-[#bbb8b8] p-1' fontSize='large' />
                 <Twitter className='rounded-[50%] border-2 border-[#bbb8b8] p-1' fontSize='large' />
@@ -132,7 +83,7 @@ const TourDetail = () => {
               <Tab label='ĐÁNH GIÁ (0)' value='3' />
             </TabList>
             <TabPanel className='border-2 border-[#ececec]' value='1'>
-              {tour?.[0].description}
+              {data?.description}
             </TabPanel>
             <TabPanel className='border-2 border-[#ececec]' value='2'>
               <div className='flex text-sm'>
@@ -170,28 +121,12 @@ const TourDetail = () => {
               </Container>
             </TabPanel>
           </TabContext>
-          <div className='my-5 border border-[#ececec]'></div>
-          <div>
-            <h2 className='mb-5 text-xl font-extrabold'>Sản phẩm tương tự</h2>
-            <Slider {...settings}>
-              {allTours?.map((tour) => (
-                <main>
-                  <Card className='rounded-md hover:shadow-xl'>
-                    <Link to={privateRoute.tourDetail.url({ id: tour.id })}>
-                      <img src={tour.img} className='h-[250px] w-full' />
-                      <CardContent className='h-[115px]'>
-                        <p className='text-[10px] text-[#353535]'>{tour.region}</p>
-                        <p className='text-sm'>{tour.name}</p>
-                        <p className='text-sm font-extrabold'>{tour.priceVND} ₫</p>
-                      </CardContent>
-                    </Link>
-                  </Card>
-                </main>
-              ))}
-            </Slider>
-          </div>
         </Container>
       </div>
+
+      <Dialog open={openOrder}>
+        <PopupCreateOrder item={data!} onClose={() => setOpenOrder(false)} />
+      </Dialog>
     </Spinner>
   );
 };

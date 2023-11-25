@@ -1,14 +1,9 @@
 import { Box } from '@mui/material';
 import { AppFooter, AppHeader } from 'containers';
-import { useSelector } from 'react-redux';
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { profileSelector } from 'reducers/profileSlice';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { privateRoute } from 'routes';
 
 const PrivateLayout = () => {
-  const navigator = useNavigate();
-  const { isLoggedIn } = useSelector(profileSelector);
-
   return (
     <main>
       <AppHeader />

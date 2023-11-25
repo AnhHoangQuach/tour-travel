@@ -12,7 +12,8 @@ const AppFooter = () => {
         background: `#0a0a0a url('https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/02/bg-footer.jpg') no-repeat center / cover`,
       }}
     >
-      <div className='flex items-center justify-center bg-[#000] pb-4 pt-3 text-sm text-[#A5A5A5] lg:text-base' >GOLDEN SPONSORS
+      <div className='flex items-center justify-center bg-[#000] pb-4 pt-3 text-sm text-[#A5A5A5] lg:text-base'>
+        GOLDEN SPONSORS
       </div>
       <Container maxWidth='lg' className='mt-16'>
         <Toolbar component={Container} maxWidth='xl'>
@@ -23,19 +24,19 @@ const AppFooter = () => {
                 src='https://mauweb.monamedia.net/lets-travel/wp-content/uploads/2018/12/logo_footer.png'
               />
               <p className='h-8'>
-                <span className='mr-3'>
+                <span className='mr-2'>
                   <LocationOn fontSize='small' />
                 </span>
                 319 Nguyễn Văn Bảo, Q.Gò Vấp, HCM
               </p>
               <p className='h-8'>
-                <span className='mr-3'>
+                <span className='mr-2'>
                   <LocalPhone fontSize='small' />
                 </span>
                 0126 922 0162
               </p>
               <p className='h-8'>
-                <span className='mr-3'>
+                <span className='mr-2'>
                   <Email fontSize='small' />
                 </span>
                 sunnytravel@company.com
@@ -106,11 +107,6 @@ const AppFooter = () => {
           </div>
         </Toolbar>
       </Container>
-      <div className='flex items-center justify-center bg-[#000] pb-4 pt-3 text-sm text-[#A5A5A5] lg:text-base'>
-        © All rights reserved. Thiết kế website
-        <img className='ml-1 h-5 w-5' src='https://mona.solutions/logo.png' />
-        <span className='font-bold'>Sunny Travel</span>
-      </div>
     </AppBar>
   );
 };

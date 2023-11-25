@@ -1,18 +1,36 @@
-type DialogController = {
+type PaginateParams = {
+  search?: string;
+  page?: number;
+  size?: number;
+  orderBy?: string;
+  desc?: string | number | boolean;
+  populate?: string;
+};
+
+type PaginateType = {
+  total: number;
+  size: number;
+  pages: number;
+  currentPage: number;
+};
+
+type PopupController = {
   onSuccess?: () => void;
   onClose: () => void;
 };
 
-type ISOString = string;
-
-type DBTimeAudit = {
-  createdAt: ISOString;
-  createdBy?: number;
-  updatedAt: ISOString;
-  updatedBy?: number;
+type CommonSearch = {
+  page?: number;
+  size?: number;
+  [key: string]: Object;
 };
 
-type ErrorResponse = {
-  name: string;
-  message: string;
+type SearchController = {
+  onChange: (search: CommonSearch) => void;
+};
+
+type CommonRecordType = {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
 };

@@ -61,10 +61,6 @@
       background-color: rgba(0, 0, 0, 0.02);
     }
   }
-  .MuiInputBase-input {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
 }
 
 .MuiTab-root {
@@ -74,10 +70,6 @@
   &.Mui-selected {
     background-color: white;
   }
-}
-
-.MuiButtonBase-root {
-  background-color: #0000000A !important;
 }
 
 .MuiDialog-root {
@@ -119,68 +111,3 @@
 .MuiButton-containedSecondary {
   background-color: var(--color-secondary-main);
 }
-
-.MuiButton-root {
-  &.MuiButton-containedPrimary {
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      background-color: var(--color-primary-dark);
-      color: #fffc;
-    }
-  }
-
-  &.MuiButton-containedSecondary {
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      background-color: var(--color-secondary-dark);
-      color: #fffc;
-    }
-  }
-
-  &.MuiButton-containedInherit {
-    background-color: var(--color-paper-dark);
-    &:hover {
-      background-color: var(--color-paper-grey);
-    }
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-text-disabled);
-    }
-  }
-}
-
-.MuiButton-root {
-  &.MuiButton-outlined {
-    @apply shadow-sm;
-  }
-
-  &.MuiButton-outlinedPrimary {
-    color: var(--color-primary-main);
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-primary-dark);
-    }
-  }
-
-  &.MuiButton-outlinedSecondary {
-    color: var(--color-secondary-main);
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-secondary-dark);
-    }
-  }
-
-  &.MuiButton-outlinedInherit {
-    border-color: var(--color-border-dark);
-    &.Mui-disabled,
-    &.MuiLoadingButton-loading,
-    .MuiLoadingButton-loadingIndicator {
-      color: var(--color-text-disabled);
-    }
-  }
-}
-
